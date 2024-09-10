@@ -1,0 +1,8 @@
+Types: deb
+# http://snapshot.debian.org/archive/debian/20240701T000000Z
+URIs: http://archive.debian.petiak.ir/debian/
+Suites: bookworm bookworm-updates
+Components: main
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+
