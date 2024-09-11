@@ -1,5 +1,7 @@
 default: up migarte
 
+setup: up migarte create-superuser
+
 up:
 	docker-compose --env-file .env up -d
 
@@ -11,4 +13,10 @@ migarte:
 
 down:
 	docker-compose --env-file .env down
-	
+
+create-superuser:
+	bash ./create-superuser.sh
+
+db-shell:
+	bash db-shell.sh
+
