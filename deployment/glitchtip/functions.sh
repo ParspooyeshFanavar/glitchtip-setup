@@ -5,7 +5,7 @@ function docker-running-by-name() {
 	docker ps | grep "$@" | sed 's/ .*//' | head -n1
 }
 
-function docker-shell-to-name() {
+function docker-exec-on-name() {
 	ID=$(docker-running-by-name $1)
 	if [ -z $ID ] ; then
 		echo "No running container by image name $1"

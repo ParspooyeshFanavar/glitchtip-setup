@@ -2,4 +2,4 @@
 
 source functions.sh
 
-docker-shell-to-name glitchtip-web-1 python manage.py migrate
+docker-exec-on-name glitchtip-web-1 python manage.py migrate
