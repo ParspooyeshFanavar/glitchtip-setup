@@ -12,9 +12,14 @@ function docker-shell-to-name() {
 		return
 	fi
 	shift
-	if [ -z $1 ] ; then
-		docker exec -it $ID /bin/bash
+	docker exec -i $ID "$@"
+}
+
+function docker-gateway-ip() {
+	ID=$(docker-running-by-name $1)
+	if [ -z $ID ] ; then
+		echo "No running container by image name $1"
 		return
 	fi
-	docker exec -it $ID "$@"
+	docker inspect -f '{{range.NetworkSettings.Networks}}{{.Gateway}}{{end}}' $ID
 }
