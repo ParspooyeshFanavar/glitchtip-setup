@@ -1,6 +1,9 @@
 default: up migarte
 
-setup: up migarte create-superuser
+setup: generate-env up migarte create-superuser
+
+generate-env:
+	bash generate-env.sh
 
 up:
 	docker-compose --env-file .env up -d
